@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">
+                    الاسئلة
+                </h4>
+                <div class="col-12">
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    الاختبار
+                                </label>
+                                <select class="form-select" name="exam_level">
+                                    <option value="1">
+                                        سهل
+                                    </option>
+                                    <option value="2">
+                                        متوسط
+                                    </option>
+                                    <option value="3">
+                                        صعب
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                <button class="btn btn-primary waves-effect waves-light" data-bs-target="#exampleModalScrollable" data-bs-toggle="modal" type="button">
+                إضافة اسئلة
+               </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div aria-labelledby="exampleModalScrollableTitle" class="modal fade" id="exampleModalScrollable" tabindex="-1" style="display: none;" aria-hidden="true">
+               <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                 <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalScrollableTitle">
+                   إضافة سؤال
+                  </h5>
+                  <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
+                  </button>
+                 </div>
+                 <div class="modal-body">
+                <form class="repeater" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    السؤال
+                                </label>
+                                <input class="form-control" name = "question" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div data-repeater-list="group-a">
+                        <div class="row" data-repeater-item="">
+                            <div class="mb-3 col-lg-2">
+                                <label class="form-label" for="name">
+                                    الإجابة
+                                </label>
+                                <input class="form-control" id="name" name="group-a[0][untyped-input]" type="text">
+                            </div>
+                            <div class="mb-3 col-lg-2 align-items-center">
+                                <div class="form-check">
+                                 <input class="form-check-input" id="horizontal-customCheck" type="checkbox">
+                                 <label class="form-check-label" for="horizontal-customCheck">
+                                  صحيحة
+                                 </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 align-self-center">
+                                <div class="d-grid">
+                                    <input class="btn btn-danger" data-repeater-delete="" type="button" value="حذف">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input class="btn btn-success mt-3 mt-lg-0" data-repeater-create="" type="button" value="إضافة إجابة">
+                </form>
+                 </div>
+                 <div class="modal-footer">
+                  <button class="btn btn-light" data-bs-dismiss="modal" type="button">
+                   إغلاق
+                  </button>
+                  <button class="btn btn-primary" type="button">
+                   حفظ السؤال
+                  </button>
+                 </div>
+                </div>
+                <!-- /.modal-content -->
+               </div>
+               <!-- /.modal-dialog -->
+              </div>
+{% endblock %}

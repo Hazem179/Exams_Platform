@@ -1,0 +1,283 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" style="direction: rtl;">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   {{title}}
+  </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Premium Multipurpose Admin &amp; Dashboard Template" name="description">
+   <meta content="Themesbrand" name="author"/>
+   <!-- App favicon -->
+   <link href="/images/favicon.ico" rel="shortcut icon"/>
+   <!-- Bootstrap Css -->
+   <link href="{% static 'css/bootstrap-rtl.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- Icons Css -->
+    <link href="{% static 'css/icons.min.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- App Css-->
+    <link href="{% static 'css/app-rtl.min.css' %}" rel="stylesheet" type="text/css"/>
+   </link>
+  </meta>
+ </head>
+ <body>
+  <!-- <body data-layout="horizontal" data-topbar="colored"> -->
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+   <header id="page-topbar">
+    <div class="navbar-header">
+     <div class="d-flex">
+      <!-- LOGO -->
+      <div class="navbar-brand-box">
+       <a class="logo logo-dark" href="index.html">
+        MIA
+<!--        <span class="logo-sm">-->
+<!--         <img alt="" height="22" src="/images/logo-sm.png"/>-->
+<!--        </span>-->
+<!--        <span class="logo-lg">-->
+<!--         <img alt="" height="20" src="/images/logo-dark.png"/>-->
+<!--        </span>-->
+       </a>
+       <a class="logo logo-light" href="index.html">
+        MIA
+<!--        <span class="logo-sm">-->
+<!--         <img alt="" height="22" src="/images/logo-sm.png"/>-->
+<!--        </span>-->
+<!--        <span class="logo-lg">-->
+<!--         <img alt="" height="20" src="/images/logo-light.png"/>-->
+<!--        </span>-->
+       </a>
+      </div>
+      <button class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn" type="button">
+       <i class="fa fa-fw fa-bars">
+       </i>
+      </button>
+      <!-- App Search-->
+
+     </div>
+     <div class="d-flex">
+      <div class="dropdown d-none d-lg-inline-block ms-1">
+       <button class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen" type="button">
+        <i class="uil-minus-path">
+        </i>
+       </button>
+      </div>
+      <div class="dropdown d-inline-block">
+       <button aria-expanded="false" aria-haspopup="true" class="btn header-item waves-effect" data-bs-toggle="dropdown" id="page-header-user-dropdown" type="button">
+<!--        <img alt="Header Avatar" class="rounded-circle header-profile-user" src="/images/users/avatar-4.jpg"/>-->
+        <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15">
+         {{request.user}}
+        </span>
+        <i class="uil-angle-down d-none d-xl-inline-block font-size-15">
+        </i>
+       </button>
+       <div class="dropdown-menu dropdown-menu-end">
+        <!-- item-->
+        <a class="dropdown-item" href="#">
+         <i class="uil uil-user-circle font-size-18 align-middle text-muted me-1">
+         </i>
+         <span class="align-middle">
+          عرض البيانات
+         </span>
+        </a>
+        <a class="dropdown-item" href="#">
+         <i class="uil uil-sign-out-alt font-size-18 align-middle me-1 text-muted">
+         </i>
+         <span class="align-middle">
+          تسجيل الخروج
+         </span>
+        </a>
+       </div>
+      </div>
+
+     </div>
+    </div>
+   </header>
+   <!-- ========== Left Sidebar Start ========== -->
+   <div class="vertical-menu">
+    <!-- LOGO -->
+    <div class="navbar-brand-box">
+     <a class="logo logo-dark" href="index.html">
+      MIA
+      <span class="logo-sm">
+       <img alt="" height="22" src="/images/logo-sm.png"/>
+      </span>
+      <span class="logo-lg">
+       <img alt="" height="20" src="/images/logo-dark.png"/>
+      </span>
+     </a>
+     <a class="logo logo-light" href="index.html">
+      <span class="logo-sm">
+       <img alt="" height="22" src="/images/logo-sm.png"/>
+      </span>
+      <span class="logo-lg">
+       <img alt="" height="20" src="/images/logo-light.png"/>
+      </span>
+     </a>
+    </div>
+    <button class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn" type="button">
+     <i class="fa fa-fw fa-bars">
+     </i>
+    </button>
+    <div class="sidebar-menu-scroll" data-simplebar="">
+     <!--- Sidemenu -->
+     <div id="sidebar-menu">
+      <!-- Left Menu Start -->
+      <ul class="metismenu list-unstyled" id="side-menu">
+
+       <li>
+        <a href="{% url 'home' %}">
+         <i class="dripicons-home">
+         </i>
+         <span>
+          الصفحة الرئيسية
+         </span>
+        </a>
+       </li>
+
+       <li>
+        <a class="has-arrow waves-effect" href="javascript: void(0);">
+         <i class="dripicons-pencil">
+         </i>
+         <span>
+          الإختبارات
+         </span>
+        </a>
+        <ul aria-expanded="false" class="sub-menu">
+         <li>
+          <a href="{% url 'exams' %}">
+           إضافة إختبار
+          </a>
+         </li>
+        </ul>
+       </li>
+       </li>
+       <li>
+        <a class="has-arrow waves-effect" href="javascript: void(0);">
+         <i class="dripicons-question">
+         </i>
+         <span>
+          بنك الأسئلة
+         </span>
+        </a>
+        <ul aria-expanded="false" class="sub-menu">
+         <li>
+          <a href="{% url 'questions' %}">
+           إضافة سؤال
+          </a>
+         </li>
+         <li>
+          <a href="">
+           بنك الأسئلة
+          </a>
+         </li>
+        </ul>
+       </li>
+       </li>
+       <li>
+        <a class="has-arrow waves-effect" href="javascript: void(0);">
+         <i class="dripicons-graduation">
+         </i>
+         <span>
+          النتائج والتقارير
+         </span>
+        </a>
+        <ul aria-expanded="false" class="sub-menu">
+         <li>
+          <a href="#">
+           نتائج الاختبارات
+          </a>
+         </li>
+        </ul>
+       </li>
+       </li>
+       <li>
+        <a class="has-arrow waves-effect" href="javascript: void(0);">
+         <i class="dripicons-article">
+         </i>
+         <span>
+          المدونة
+         </span>
+        </a>
+        <ul aria-expanded="false" class="sub-menu">
+         <li>
+          <a href="">
+           إضافة منشور
+          </a>
+         </li>
+         <li>
+          <a href="">
+           كل المنشورات
+          </a>
+         </li>
+        </ul>
+       </li>
+       </li>
+      </ul>
+     </div>
+     <!-- Sidebar -->
+    </div>
+   </div>
+   <!-- Left Sidebar End -->
+   <!-- ============================================================== -->
+   <!-- Start right Content here -->
+   <!-- ============================================================== -->
+   <div class="main-content">
+    <div class="page-content">
+     <div class="container-fluid">
+      {% block content %}
+      {% endblock %}
+     </div>
+     <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+    <footer class="footer">
+     <div class="container-fluid">
+      <div class="row">
+       <div class="col-sm-6">
+        <script>
+         document.write(new Date().getFullYear())
+        </script>
+        © MIA.
+       </div>
+       <div class="col-sm-6">
+        <div class="text-sm-end d-none d-sm-block">
+         تم التصميم والتنفيذ بواسطة
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+   <!-- end main content-->
+  </div>
+  <!-- END layout-wrapper -->
+  <!-- JAVASCRIPT -->
+  <script src="{% static 'libs/jquery/jquery.min.js' %}">
+  </script>
+  <script src="{% static 'libs/bootstrap/js/bootstrap.bundle.min.js' %}">
+  </script>
+  <script src="{% static 'libs/metismenu/metisMenu.min.js' %}">
+  </script>
+  <script src="{% static 'libs/simplebar/simplebar.min.js' %}">
+  </script>
+  <script src="{% static 'libs/node-waves/waves.min.js' %}">
+  </script>
+  <script src="{% static 'libs/waypoints/lib/jquery.waypoints.min.js' %}">
+  </script>
+  <script src="{% static 'libs/jquery.counterup/jquery.counterup.min.js' %}">
+  </script>
+  <!-- apexcharts -->
+<!--  <script src="{% static 'libs/apexcharts/apexcharts.min.js' %}">-->
+  </script>
+  <script src="{% static 'js/pages/dashboard.init.js' %}">
+  </script>
+  <!-- App js -->
+  <script src="{% static 'js/app.js' %}">
+  </script>
+   <script src="{% static 'libs/jquery.repeater/jquery.repeater.min.js' %}">
+  </script>
+  <script src="{% static 'js/pages/form-repeater.int.js' %}">
+  </script>
+ </body>
+</html>
